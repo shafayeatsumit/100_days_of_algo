@@ -6,40 +6,41 @@ function TreeNode (value) {
 }
 
 
-const find_paths = function (root, sum) {
-  allPaths = [];
-  if(!root)  return false
-  if(!root.left && !root.right && root.value ===sum) {      
-      return [[root.value]]
+const find_paths_recursive = function(root, sum, currentPath, allPaths){
+  if(!root) return
+  if(root){
+    currentPath.push(root.value)
   } 
-
-  let left = find_paths(root.left, sum - root.value) 
-  if(left){    
-    let lastArr = left[left.length - 1]    
-    lastArr.unshift(root.value)        
-    console.log(lastArr)
-    return left
+  if(!root.left && !root.right){
+    allPaths.push(currentPath)    
+    
   }
   
-  let right = find_paths(root.left, sum - root.value)
-  if(right){
-    let lastArr = right[right.length - 1]    
-    lastArr.unshift(root.value)    
-    console.log(lastArr)
-    return right
-  }
+  if(root.left) find_paths_recursive(root.left,sum, currentPath ,allPaths)  
   
-};
+  if (root.right) find_paths_recursive(root.right, sum, currentPath, allPaths)
+  
+}
+
+const find_paths = function (root, sum) {
+  let allPaths = []
+  find_paths_recursive(root, sum, [], allPaths)
+  return allPaths
+}
 
 
 
-var root = new TreeNode(12)
+var root = new TreeNode(1)
 root.left = new TreeNode(7)
-root.right = new TreeNode(1)
+root.right = new TreeNode(9)
+
+
 root.left.left = new TreeNode(4)
-root.right.left = new TreeNode(10)
-root.right.right = new TreeNode(5)
-sum = 23
+root.left.right = new TreeNode(5)
+
+root.right.left = new TreeNode(2)
+root.right.right = new TreeNode(7)
+sum = 12
 const r = find_paths(root, sum)
 console.log(r)
 // console.log(`Tree paths with sum: ${sum}: ${}`)
