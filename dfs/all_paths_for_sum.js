@@ -13,13 +13,15 @@ const find_paths_recursive = function(root, sum, currentPath, allPaths){
   } 
   if(!root.left && !root.right){
     allPaths.push(currentPath)    
-    
+    return 
   }
   
-  if(root.left) find_paths_recursive(root.left,sum, currentPath ,allPaths)  
+  if(root.left) find_paths_recursive(root.left,sum - root.value, currentPath ,allPaths)  
   
-  if (root.right) find_paths_recursive(root.right, sum, currentPath, allPaths)
   
+  console.log(`root: ${root.value} currentPath: ${currentPath} sum: ${sum}`)
+  if (root.right) find_paths_recursive(root.right, sum -root.value, currentPath, allPaths)
+  currentPath.pop() 
 }
 
 const find_paths = function (root, sum) {
