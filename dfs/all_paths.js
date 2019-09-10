@@ -15,9 +15,8 @@ function find_paths(root, sum) {
 
 function find_paths_recursive(root, sum, currentPath,allPaths) {
   if(root) currentPath.push(root.val)
-  if(!root.left && !root.right && root.val === sum){
-    let pathCopy = Array.from(currentPath)
-    allPaths.push(pathCopy)
+  if(!root.left && !root.right && root.val === sum){    
+    allPaths.push([...currentPath])
   }
   if (root.left) find_paths_recursive(root.left, sum - root.val, currentPath, allPaths)
   if (root.right) find_paths_recursive(root.right, sum - root.val, currentPath, allPaths)
