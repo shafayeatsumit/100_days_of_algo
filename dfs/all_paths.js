@@ -6,21 +6,21 @@ function TreeNode (val){
 }
 
 
-function find_paths(root, sum) {
+function find_paths(root) {
   let allPaths = [];
-  find_paths_recursive(root, sum, [], allPaths);
+  find_paths_recursive(root, [], allPaths);
   return allPaths;
 }
 
 
-function find_paths_recursive(root, sum, currentPath,allPaths) {
-  if(root) currentPath.push(root.val)
-  if(!root.left && !root.right && root.val === sum){    
-    allPaths.push([...currentPath])
+function find_paths_recursive(root, currentPath, allPaths) {
+  let value = root.val;
+  currentPath = [...currentPath, value]  
+  if(!root.left && !root.right){    
+    allPaths.push(currentPath)
   }
-  if (root.left) find_paths_recursive(root.left, sum - root.val, currentPath, allPaths)
-  if (root.right) find_paths_recursive(root.right, sum - root.val, currentPath, allPaths)
-  currentPath.pop()
+  if (root.left) find_paths_recursive(root.left, currentPath, allPaths)
+  if (root.right) find_paths_recursive(root.right, currentPath, allPaths)
 }
 
 
@@ -30,6 +30,5 @@ root.right = new TreeNode(1)
 root.left.left = new TreeNode(4)
 root.right.left = new TreeNode(10)
 root.right.right = new TreeNode(5)
-sum = 23
-let result = find_paths(root, sum);
+let result = find_paths(root);
 console.log(result)

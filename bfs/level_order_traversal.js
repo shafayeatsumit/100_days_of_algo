@@ -12,11 +12,11 @@ const traverse = function (root) {
   let result = [];
   let Q = [root]  
   while(Q.length>0){         
-    let levelSize = Q.length
+    let numberOfNodes = Q.length
     let currentLevel = [];    
-    for(i=0;i<levelSize;i++){
+    for (i = 0; i < numberOfNodes; i++){
       let node = Q.shift();
-      currentLevel.push(node.value)
+      currentLevel.push(node.value)      
       if(node.left) Q.push(node.left)
       if(node.right) Q.push(node.right)
     }
@@ -36,4 +36,3 @@ root.left.right = new TreeNode(8);
 root.right.left = new TreeNode(10);
 root.right.right = new TreeNode(5);
 const r = traverse(root)
-console.log(r)
