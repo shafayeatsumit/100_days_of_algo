@@ -5,13 +5,17 @@ function TreeNode(value){
 }
 
 function find_paths_recursive(root, currentPath, sequence){
+  if(!root) return false
   currentPath = [...currentPath, root.value]
-  if(!root.left && !root.right && JSON.stringify(sequence) === JSON.stringify(currentPath)){
-    return true;
+  if(!root.left && !root.right){
+    if(JSON.stringify(sequence) === JSON.stringify(currentPath)){
+      return true
+    }else{
+      return false
+    } 
   }
   
-  if(root.left) find_paths_recursive(root.left,currentPath, sequence)
-  if (root.right) find_paths_recursive(root.right, currentPath, sequence)
+  return find_paths_recursive(root.left, currentPath, sequence) ||  find_paths_recursive(root.right, currentPath, sequence)  
 }
 
 const find_path = function (root, sequence) {
@@ -25,4 +29,5 @@ root.left = new TreeNode(7)
 root.right = new TreeNode(9)
 root.right.left = new TreeNode(2)
 root.right.right = new TreeNode(9)
-find_path(root, [1, 9, 9])
+let result = find_path(root, [1, 9, 9])
+console.log(result)
