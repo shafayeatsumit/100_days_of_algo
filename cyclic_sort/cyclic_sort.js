@@ -1,35 +1,15 @@
-const get_count = function (i,nums){
-  let count = 0;
-  for (j = i + 1; j < nums.length; j++) {
-    let b = nums[j]
-    if (b < nums[i]) {
-      count = count + 1;
-    }
-  }
-  return count
-}
 
-const swap = function(i,count , nums){
-  let temp = nums[i]
-  nums[i] = nums[count]
-  nums[count] = temp
-  
-  return nums
-}
 
 const cyclic_sort = function (nums) {
   let i = 0
   while(i<nums.length){    
-    count = get_count(i, nums)  
-    if (count === 0) {
+    let indexShould = nums[i]-1;    
+    if(indexShould !== i){
+      [nums[indexShould], nums[i]] = [nums[i], nums[indexShould]] 
+    }else{
       i++
-      continue
-    }    
-
-    nums = swap(i, count, nums)
-
-  }
-  console.log(nums)  
+    }
+  }  
   return nums;
 }
 
