@@ -3,7 +3,7 @@ LeetCode Marathon
 
 ### 100 days of algorithm/data structure learning challenge 
 
-(Notes: "&hearts;" it's not what we do once in awhile that shapes our lives)
+(Notes: "&hearts;" it's not what we do once in awhile that shapes our lives.It's what we do consistently.)
 
 | #day | Title | Pattern | Date |
 |---| ----- | -------- | ---------- |
