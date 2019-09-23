@@ -1,19 +1,19 @@
-const smallest_subarray_with_given_sum = function (s, arr) {  
- 
-  for (size=1; size<arr.length; size++) {
-    let windowStart = 0,
-      windowSum = 0;     
-    for (let windowEnd = 0; windowEnd < arr.length; windowEnd++) {
-      windowSum = windowSum + arr[windowEnd]
-      if (windowEnd >= size - 1) {        
-        if (windowSum >= s) return size
-        windowSum = windowSum - arr[windowStart]
-        windowStart++;
-      }
+const smallest_subarray_with_given_sum = function (s, nums) {  
+  let windowStart = 0,
+  windowSum = 0,
+  minLen = nums.length+1;
+  for (windowEnd = 0; windowEnd < nums.length;windowEnd++){
+    windowSum = windowSum + nums[windowEnd]
+    while(windowSum>=s){
+      let windowLength = (windowEnd - windowStart)+1;      
+      minLen = Math.min(minLen, windowLength)
+      windowSum = windowSum - nums[windowStart]
+      windowStart = windowStart + 1
     }
+    
   }
-  
-  return -1;
+  if (minLen === nums.length + 1) return 0
+  return minLen;
 };
 
 let a = [3, 4, 1, 1, 6]
