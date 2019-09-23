@@ -28,3 +28,4 @@ LeetCode Marathon
 |19|Cyclic Sort (own way)| Cyclic Sort| 20/09/2019
 |20|Max Heap(review)| Heap|21/09/2019
 |21|Smallest Sub array|Sliding Window|22/09/2019
+|22| Minimum Size Subarray Sum|Sliding Window|23/09/2019
