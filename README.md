@@ -29,3 +29,4 @@ LeetCode Marathon
 |20|Max Heap(review)| Heap|21/09/2019
 |21|Smallest Sub array|Sliding Window|22/09/2019
 |22| Minimum Size Subarray Sum|Sliding Window|23/09/2019
+|23| Remove duplicates from sorted array|Two Pointers|24/09/2019
