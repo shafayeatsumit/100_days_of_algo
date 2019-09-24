@@ -1,14 +1,13 @@
-const remove_duplicates = function (arr) {
-  // TODO: Write your code here
-  let newArr = [arr[0]]
-  for(i=0;i+1<arr.length;i++){
-    if(arr[i]!==arr[i+1]){
-      newArr.push(arr[i+1])
+const remove_duplicates = function (nums) {
+  let p = 0; // next to duplicate
+  for (i = 0; i < nums.length;i++){
+    if (nums[i]!==arr[p]){
+      p++
+      [nums[p], nums[i]] = [nums[i], nums[p]]
     }
-  }
-  console.log(newArr)
-  return -1;
+  }  
+  return p+1;
 };
 
-let arr = [2, 2, 2, 11];
-remove_duplicates(arr)
+let arr = [2, 3, 3, 3, 6, 9, 9];
+let r = remove_duplicates(arr)
