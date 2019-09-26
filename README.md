@@ -31,3 +31,4 @@ LeetCode Marathon
 |22| Minimum Size Subarray Sum|Sliding Window|23/09/2019
 |23| Remove duplicates from sorted array|Two Pointers|24/09/2019
 |24| Traversal Reverse|BFS|25/09/2019
+|25| Rerver LinkedL recursive|Linked List|26/09/2019
