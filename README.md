@@ -32,3 +32,6 @@ LeetCode Marathon
 |23| Remove duplicates from sorted array|Two Pointers|24/09/2019
 |24| Traversal Reverse|BFS|25/09/2019
 |25| Rerver LinkedL recursive|Linked List|26/09/2019
+|26| DFS review|DFS|27/09/2019
+|27| Leet Code Path Sum 3 |DFS|28/09/2019
+
