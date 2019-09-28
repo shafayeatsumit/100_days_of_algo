@@ -13,12 +13,26 @@ function TreeNode(val) {
 }
 
 var hasPathSum = function (root, sum) {
-  if(!root) return false 
-    
-   if(!root.left && !root.right && sum===root.val){     
+  sum = sum - root.val
+  if(!root.left && !root.right){
+    return sum === 0
+  }
+  if(root.left){
+    let r = hasPathSum(root.left, sum)
+    if(r) {
       return true
-   }
-   return hasPathSum(root.left, sum - root.val) || hasPathSum(root.right, sum - root.val)    
+    }else{
+      return false
+    }
+  }
+  if(root.right){
+    let r = hasPathSum(root.right, sum)
+    if (r){
+      return true
+    }else{
+      return false
+    }
+  }
 };
 
 var root = new TreeNode(1)
@@ -29,5 +43,5 @@ root.left.right = new TreeNode(5)
 root.right.left = new TreeNode(6)
 root.right.right = new TreeNode(7)
 
-const result = hasPathSum(root,10)
+const result = hasPathSum(root,13)
 console.log(result)
