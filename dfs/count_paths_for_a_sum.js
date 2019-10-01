@@ -15,22 +15,19 @@ class TreeNode {
   }
 };
 
-// public class Solution {
-//   public int pathSum(TreeNode root, int sum) {
-//     if (root == null) return 0;
-//     return pathSumFrom(root, sum) + pathSum(root.left, sum) + pathSum(root.right, sum);
-//   }
-
-//   private int pathSumFrom(TreeNode node, int sum) {
-//     if (node == null) return 0;
-//     return (node.val == sum ? 1 : 0)
-//       + pathSumFrom(node.left, sum - node.val) + pathSumFrom(node.right, sum - node.val);
-//   }
-// }
+/**
+ * 
+ * why do we need to call paths sum for every left and right node
+ * At first I just cannot figure out why pathSum needs to be called again.
+ * Then I realized that it because each node could be exactly the sum itself.
+ * If we only call pathSumFrom; the cases which node value == sum would be bypassed.
+ * to repro
+ * [10,7,3,1,null,null,4]
+ */
 
 var pathSumFrom = function(node, sum){
   if (!node) return 0;
-    return (node.val == sum ? 1 : 0)
+    return (node.val === sum ? 1 : 0)
       + pathSumFrom(node.left, sum - node.val) + pathSumFrom(node.right, sum - node.val);
 
 }

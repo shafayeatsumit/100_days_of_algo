@@ -34,4 +34,7 @@ LeetCode Marathon
 |25| Rerver LinkedL recursive|Linked List|26/09/2019
 |26| DFS review|DFS|27/09/2019
 |27| Leet Code Path Sum 3 |DFS|28/09/2019
+|28| Leet Code Path Sum 3 |DFS|29/09/2019
+|29| Leet Code Path Sum 3 |DFS|30/09/2019
+|30| Leet Code Path Sum 3 |DFS|01/10/2019
 
