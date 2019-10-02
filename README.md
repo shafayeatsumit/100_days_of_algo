@@ -37,4 +37,5 @@ LeetCode Marathon
 |28| Leet Code Path Sum 3 |DFS|29/09/2019
 |29| Leet Code Path Sum 3 |DFS|30/09/2019
 |30| Leet Code Path Sum 3 |DFS|01/10/2019
+|31| Level Order Successor |BFS|02/10/2019
 
