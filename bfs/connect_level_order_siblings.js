@@ -32,11 +32,14 @@ class TreeNode {
 const connect_level_order_siblings = function (root) {
   let Q = [root]
   while(Q.length>0){
-    let levelLength = Q.length;    
+    let levelLength = Q.length;
+    let previousNode = null    
     for(let i =0; i<levelLength; i++){
       let node = Q.shift()
-      let nextSibling = Q[0]      
-      if(nextSibling && i !== levelLength-1) node.next = nextSibling
+      if(previousNode) {
+        previousNode.next = node
+      }
+      previousNode = node
       if(node.left) Q.push(node.left)
       if(node.right) Q.push(node.right)
     }
