@@ -39,4 +39,5 @@ LeetCode Marathon
 |30| Leet Code Path Sum 3 |DFS|01/10/2019
 |31| Level Order Successor |BFS|02/10/2019
 |32| Connect With Siblings |BFS|03/10/2019
+|33| Leet Code 897 |DFS|03/10/2019
 
