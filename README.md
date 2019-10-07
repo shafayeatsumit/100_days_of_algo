@@ -41,4 +41,7 @@ LeetCode Marathon
 |32| Connect With Siblings |BFS|03/10/2019
 |33| Leet Code 897 |DFS|04/10/2019
 |34| Review Old stuff |Sliding Window|05/10/2019
+|35| Longgest substring |Sliding Window|06/10/2019
+|36| Squares of sorted array |Two Pointers|07/10/2019
+
 
