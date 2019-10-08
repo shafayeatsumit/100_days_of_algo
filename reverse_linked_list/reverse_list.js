@@ -4,19 +4,20 @@ class Node {
     this.next = next;
   }
 
-  get_list() {
-    result = "";
-    temp = this;
+  print_list() {
+    let temp = this;
     while (temp !== null) {
-      result += temp.value + " ";
+      process.stdout.write(`${temp.value} `);
       temp = temp.next;
     }
-    return result;
+    console.log();
   }
-};
-
+}
 
 const reverse = function (head) {
+  if (head === null || head.next === null) {
+    return head;
+  }  
   let node = head
   let prev = null;
   while(node!==null){
@@ -28,11 +29,14 @@ const reverse = function (head) {
   return prev;
 };
 
-head = new Node(2);
+const head = new Node(2);
 head.next = new Node(4);
 head.next.next = new Node(6);
 head.next.next.next = new Node(8);
 head.next.next.next.next = new Node(10);
-reverse(head)
-// console.log(`Nodes of original LinkedList are: ${head.get_list()}`)
-// console.log(`Nodes of reversed LinkedList are: ${reverse(head).get_list()}`)
+
+process.stdout.write('Nodes of original LinkedList are: ');
+head.print_list();
+result = reverse(head);
+process.stdout.write('Nodes of reversed LinkedList are: ');
+result.print_list();
