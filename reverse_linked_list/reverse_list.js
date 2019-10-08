@@ -17,7 +17,6 @@ class Node {
 
 
 const reverse = function (head) {
-  // TODO: Write your code here
   let node = head
   let prev = null;
   while(node!==null){
