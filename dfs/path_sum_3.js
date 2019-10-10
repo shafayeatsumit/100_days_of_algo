@@ -1,30 +1,33 @@
-class TreeNode {
-
-  constructor(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
-  }
+function TreeNode(val) {
+  this.val = val;
+  this.left = null;
+  this.right = null;  
 };
 
 
-const count_paths = function (root, sum) {
-  let count = 0;
-  function count_paths_recursive(node, sum){
-    if(!node) return 0    
-    if(sum === root.value) count = count + 1;
-    return count_paths_recursive(node.left,sum - root.value) + count_paths_recursive(node.right, sum-root.value)
+const pathSum = function (root, sum) {
+  if (!root) return 0;
+  function pathSumRecursive(node, sum){
+    if(!node) return 0        
+    return  node.val ===sum? 1:0 + pathSumRecursive(node.left,sum-node.val) + pathSumRecursive(node.right, sum - node.val)
   }
-  count_paths_recursive(root,sum) + count_paths_recursive(root.left, sum) + count_paths_recursive(root.right, sum)  
-  return count
+  
+  let r = pathSumRecursive(root, sum) + pathSum(root.left, sum) + pathSum(root.right, sum)
+  return r
 };
 
 
 var root = new TreeNode(1)
-root.left = new TreeNode(2)
-root.left.left = new TreeNode(3)
-root.left.left.left = new TreeNode(4)
-root.left.left.left.left = new TreeNode(5)
+root.right = new TreeNode(2)
+root.left = new TreeNode(3)
+// root.left = new TreeNode(7)
+// root.right = new TreeNode(9)
 
-let result = count_paths(root, 3)
+// root.left.left = new TreeNode(6)
+// root.left.right = new TreeNode(5)
+
+// root.right.left = new TreeNode(2)
+// root.right.right = new TreeNode(3)
+
+let result = pathSum(root, 3)
 console.log(result)

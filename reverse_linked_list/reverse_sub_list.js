@@ -19,8 +19,8 @@ class Node {
 const reverse_sub_list = function (head, m, n) {
   if(!head || !head.next || m===n) return head
   let count = 1,
-  left = null,
-  right = null;
+  left = null, //last node of first part
+  right = null; //next node from  last node of sublist
   let node = head
 
   while(node){

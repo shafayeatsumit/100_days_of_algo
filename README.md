@@ -44,5 +44,7 @@ LeetCode Marathon
 |35| Longgest substring |Sliding Window|06/10/2019
 |36| Squares of sorted array |Two Pointers|07/10/2019
 |37| Reverse Linked List |Linked List|08/10/2019
+|38| DFS paths sum count Review |DFS|09/10/2019
+|39| review heap & sliding windwo |Sliding Window & heap|10/10/2019
 
 
