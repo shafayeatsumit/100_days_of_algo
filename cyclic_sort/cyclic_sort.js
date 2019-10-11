@@ -1,16 +1,15 @@
 
 
 const cyclic_sort = function (nums) {
-  let i = 0
-  while(i<nums.length){    
-    let indexShould = nums[i]-1;    
-    if(indexShould !== i){
-      [nums[indexShould], nums[i]] = [nums[i], nums[indexShould]] 
+  let index = 0;
+  while(index<nums.length){
+    let indexShould = nums[index] - 1
+    if(indexShould!=index){
+      [nums[indexShould], nums[index]] = [nums[index] , nums[indexShould]]
     }else{
-      i++
+      index++;
     }
-  }  
-  console.log(nums)
+  }
   return nums;
 }
 
