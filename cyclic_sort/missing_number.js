@@ -1,24 +1,14 @@
+
+
 const find_missing_number = function (nums) {
-  nums.push(null)
-  let i = 1;
-  while(i<nums.length){    
-    let indexShould = nums[i]    
-    if(indexShould!==i){
-      let temp = nums[indexShould]
-      nums[indexShould] = nums[i]
-      nums[i] = temp      
-    }else{
-      i++;
-    }
-    if(nums[i]===null ) i++
-  }  
+  nums.sort((a,b)=>a-b)
+  let lastIndex = nums.length -1
+  if(nums[0]!=0) return 0
+  if (nums[lastIndex] !== nums.length) return nums.length
   for(let i=0;i<nums.length;i++){    
-    if(nums[i]===null){     
-      return i
-    } 
-  }
-  
+    if(nums[i] != i) return i
+  }  
 };
 
-let result = find_missing_number([2, 6, 4, 3, 1, 0])
+let result = find_missing_number([0])
 console.log(result)
