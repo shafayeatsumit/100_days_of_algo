@@ -48,5 +48,6 @@ LeetCode Marathon
 |39| review heap & sliding windwo |Sliding Window & heap|10/10/2019
 |40| review cyclic sort |cycle sort|11/10/2019
 |41| Missing Number |cycle sort|12/10/2019
+|41| Subset Basic |subset|12/10/2019
 
 
