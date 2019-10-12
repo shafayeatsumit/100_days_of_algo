@@ -47,5 +47,6 @@ LeetCode Marathon
 |38| DFS paths sum count Review |DFS|09/10/2019
 |39| review heap & sliding windwo |Sliding Window & heap|10/10/2019
 |40| review cyclic sort |cycle sort|11/10/2019
+|41| Missing Number |cycle sort|12/10/2019
 
 
