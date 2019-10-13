@@ -2,25 +2,22 @@
 
 const find_missing_number = function (nums) {
   let i = 0;
-  let missing = []
   while(i<nums.length){
-    let indexShould = nums[i]
-    if(indexShould<nums.length && nums[indexShould]!==nums[i]){
-      [nums[i], nums[indexShould]] = [nums[indexShould],nums[i]]
+    let expected = nums[i]
+    if(expected !== i && expected<nums.length){
+      [nums[i], nums[expected]] = [nums[expected], nums[i]]
     }else{
-      i++
-    }    
-  }
-  for (i = 0; i < nums.length; i++) {
-    let expectedNumber = nums[i]
-    if (expectedNumber !== i) {
-      missing.push(i)
-      
-      
+      i++;    
     }
-  }  
-  return missing
+  }
+  i = 0
+  while(i<nums.length){
+    let expected = nums[i]
+    if(expected !== i) return i
+    i++
+  }
+  return i
 };
 
-let result = find_missing_number([0,2,4])
+let result = find_missing_number([1])
 console.log(result)
