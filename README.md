@@ -49,5 +49,8 @@ LeetCode Marathon
 |40| review cyclic sort |cycle sort|11/10/2019
 |41| Missing Number |cycle sort|12/10/2019
 |41| Subset Basic |subset|12/10/2019
+|42| review old stuff |DFS & subset|13/10/2019
+|43| fruit Basket problem |Sliding Window|14/10/2019
+
 
 
