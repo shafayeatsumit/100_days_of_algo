@@ -5,7 +5,7 @@ function TreeNode(val) {
 };
 
 
-const pathSum = function (root, sum) {
+const pathSumBruteForce = function (root, sum) {
   if (!root) return 0;
   function pathSumRecursive(node, sum){
     if(!node) return 0        
@@ -16,18 +16,31 @@ const pathSum = function (root, sum) {
   return r
 };
 
+const pathSum = function (root, sum){
+  if(!root) return 0;
+  let count = 0;
+  let cache = {0:1}
+  function pathSumRecursive(node, currPathSum, cache, target){    
+    currPathSum = currPathSum + node.val
+    let oldPath = currPathSum - target   
+    if(cache[oldPath]){
+      count +=1
+    }
+    if (!cache[currPathSum]) cache[currPathSum] = 0
+    cache[currPathSum] +=  1    
+    if(node.left) pathSumRecursive(node.left, currPathSum, cache, target)
+    if(node.right) pathSumRecursive(node.right, currPathSum, cache, target)
+    cache[currPathSum] = cache[currPathSum] - 1   
+  }
+  pathSumRecursive(root,0,cache,sum)
+  return count
+}
+
 
 var root = new TreeNode(1)
-root.right = new TreeNode(2)
-root.left = new TreeNode(3)
-// root.left = new TreeNode(7)
-// root.right = new TreeNode(9)
+root.left = new TreeNode(1)
+root.left.left = new TreeNode(2)
+root.right = new TreeNode(3)
 
-// root.left.left = new TreeNode(6)
-// root.left.right = new TreeNode(5)
-
-// root.right.left = new TreeNode(2)
-// root.right.right = new TreeNode(3)
-
-let result = pathSum(root, 3)
+let result = pathSum(root, 1)
 console.log(result)
