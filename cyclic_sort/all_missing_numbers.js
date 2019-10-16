@@ -1,22 +1,26 @@
-const find_missing_numbers = function (nums) {
-  missingNumbers = [];
-  let i = 0;
+
+function find_missing_numbers(nums) {
+  let missingNumbers=[];
+  let i =0;
+  let startIndex = 1;
   while(i<nums.length){
-    let expected = nums[i]+1
-    if (expected !== i && expected < nums.length && nums[expected] !== nums[i]){
-      [nums[i],nums[expected]]=[nums[expected], nums[i]]
+    let j = nums[i] - startIndex; //index should b         
+    if(nums[i] !== nums[j]){
+      [nums[i],nums[j]] = [nums[j],nums[i]]; //swap
     }else{
       i++;
     }
   }
-  i = 0
-  while (i < nums.length) {
-    let expected = nums[i]+1
-    if (expected !== i) missingNumbers.push(i)    
-    i++
-  }   
-  console.log(missingNumbers)
+  i = 0;
+  while(i<nums.length){
+    let expected = i + startIndex;
+    if(expected !== nums[i]) missingNumbers.push(expected)
+    i++;
+  }  
   return missingNumbers;
-};
+}
 
-find_missing_numbers([0,1,1])
+console.log(find_missing_numbers([12,14]));
+// console.log(find_missing_numbers([2, 3, 1, 8, 2, 3, 5, 1]));
+// console.log(find_missing_numbers([2, 4, 1, 2]));
+// console.log(find_missing_numbers([2, 3, 2, 1]));
