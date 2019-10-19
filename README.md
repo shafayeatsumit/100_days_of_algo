@@ -56,6 +56,8 @@ LeetCode Marathon
 |46| Find distinct subset |Subset|17/10/2019
 |46| Max depth of binary tree |DFS|17/10/2019
 |47| Diameter of a binary tree |DFS|17/10/2019
+|48| Max Path Sum |DFS|18/10/2019
+|49| Permutation |Subset|19/10/2019
 
 
 
