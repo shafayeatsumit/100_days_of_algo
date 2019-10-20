@@ -5,27 +5,27 @@ class Node {
   }
 }
 
-const has_cycle = function (head) {
+function findLength(slow){
+  let count = 1,
+  node = slow.next;
+  while(node!==slow){
+    node = node.next
+    count +=1    
+  }
+  return count
+}
+
+const cycleLength = function (head) {
   let fast = head,
     slow = head;
-  let len = 0;
-  // fast != null covers empty linked list condition
-  // if fast.next is not null then we don't get error in fast.next.next
-  while (fast !== null && fast.next !== null) {
-    slow = slow.next
-    fast = fast.next.next
-    if (fast === slow) {
-      if(len === 0){
-        len++;
-        continue
-      }else{
-        return len
-      }
-      
+  while(fast && fast.next){
+    slow = slow.next;
+    fast = fast.next.next;
+    if(slow===fast){
+      return findLength(slow)
     }
-    if(len>0) len++
   }
-  return false
+  return 0
 }
 
 
@@ -35,10 +35,11 @@ head.next.next = new Node(3)
 head.next.next.next = new Node(4)
 head.next.next.next.next = new Node(5)
 head.next.next.next.next.next = new Node(6)
-// console.log(`LinkedList has cycle: ${has_cycle(head)}`)
+console.log(`LinkedList has cycle: ${cycleLength(head)}`)
+
 
 head.next.next.next.next.next.next = head.next.next
-console.log(`LinkedList has cycle: ${has_cycle(head)}`)
+console.log(`LinkedList has cycle: ${cycleLength(head)}`)
 
 head.next.next.next.next.next.next = head.next.next.next
-console.log(`LinkedList has cycle: ${has_cycle(head)}`)
+console.log(`LinkedList has cycle: ${cycleLength(head)}`)

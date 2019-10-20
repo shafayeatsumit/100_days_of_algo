@@ -9,8 +9,7 @@ function maxSumPath(root){
   function sumRecursive(node){
     if(!node) return 0
     let left = sumRecursive(node.left)
-    let right = sumRecursive(node.right)    
-    debugger
+    let right = sumRecursive(node.right)        
     maxSum = Math.max(maxSum,left+right+node.val)
     let leftMax = Math.max(left, left+node.val)
     let rightMax = Math.max(right, right+node.val)

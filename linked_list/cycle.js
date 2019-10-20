@@ -12,7 +12,8 @@ const has_cycle = function (head) {
    * fast != null covers empty linked list condition
    * fast !== null also covers if fast pointer runs out off element
    * 1-->2-->3-->4-->5-->6-->null here if fast is at 5
-   * then fast.next.next would be null and it will throuw error at fast.next condition due to null.next
+   * then fast.next.next would be null 
+   * and it will throw error at fast.next condition due to null.next
    * if fast.next is not null then we don't get error in fast.next.next
    */
   while (fast !== null && fast.next !== null){    
