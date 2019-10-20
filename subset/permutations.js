@@ -16,8 +16,8 @@ function permute(nums) {
      }               
    }
  }
- console.log(subsets)
+ return subsets.filter((item)=>item.length === nums.length)
 }
 
 const result = permute([1, 3, 5]);
-// console.log(result)
+console.log(result)

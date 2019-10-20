@@ -7,26 +7,26 @@ function TreeNode(val) {
 function maxSumPath(root){
   let maxSum = Number.MIN_SAFE_INTEGER;
   function sumRecursive(node){
-    if(!node) return 0    
-    let leftSum = sumRecursive(node.left)
-    let rightSum = sumRecursive(node.right)
-    let totalSum = leftSum + rightSum 
-    maxSum = Math.max(maxSum, node.val)
-    maxSum= Math.max(maxSum , leftSum+node.val)
-    maxSum = Math.max(maxSum, rightSum + node.val)
-    totalSum = totalSum  + node.val
-    maxSum= Math.max(maxSum, totalSum)
-    return totalSum    
+    if(!node) return 0
+    let left = sumRecursive(node.left)
+    let right = sumRecursive(node.right)    
+    debugger
+    maxSum = Math.max(maxSum,left+right+node.val)
+    let leftMax = Math.max(left, left+node.val)
+    let rightMax = Math.max(right, right+node.val)
+    return Math.max(leftMax,rightMax)
   }  
-  sumRecursive(root) 
-  console.log(maxSum) 
+  sumRecursive(root)   
   return maxSum  
 }
 
-var root = new TreeNode(2)
-root.left = new TreeNode(-1)
-root.right = new TreeNode(-2)
-// root.left.left = new TreeNode(4)
-// root.right.right = new TreeNode(6)
-// root.right.left = new TreeNode(5)
-maxSumPath(root)
+var root = new TreeNode(1)
+root.left = new TreeNode(-2)
+root.right = new TreeNode(-3)
+root.right.left = new TreeNode(-2)
+root.left.left = new TreeNode(1)
+root.left.right = new TreeNode(3)
+root.left.left.left = new TreeNode(-1)
+
+let r = maxSumPath(root)
+console.log(r)
