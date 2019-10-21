@@ -1,19 +1,18 @@
-const pair_with_targetsum = function (arr, target_sum) {
-  const len = arr.length;
-  let p1 = 0;
-  let p2 = len-1;
-  while(p1<p2){
-    let sum = arr[p1] + arr[p2]    
-    if(sum === target_sum) {
-      return [p1, p2]
+const pair_with_targetsum = function (nums, target) {
+  let hash = {};
+  let pairs = [];
+  for(let i=0;i<nums.length;i++){
+    let result = target - nums[i]
+    debugger    
+    if(hash[result]!==undefined){
+      pairs.push([i, hash[result]])       
+      delete hash[result] // to remove the duplicates
+    }else{
+      hash[nums[i]] = i
     }
-    if(sum>target_sum){
-      p2 = p2 - 1;
-    }else if(sum<target_sum){
-      p1 = p1 + 1;
-    }       
-  }
+  }  
+  return pairs;
 }
 
-const r = pair_with_targetsum([1, 2, 3, 4, 6], 6)
+const r = pair_with_targetsum([3, 2, 4,4],6)
 console.log(r)
