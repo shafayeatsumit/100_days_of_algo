@@ -60,7 +60,8 @@ LeetCode Marathon
 |48| Permutation |Subset|19/10/2019
 |49| Review Cycle List|Linked List|20/10/2019
 |50| 3sum|Two Pointers|21/10/2019
-|51| 3sum|Order Agnostic Binary Search|22/10/2019
+|51| Order Agnostic Binary Search| BS |22/10/2019
+|51| Find/Remove Duplicate|Cycle/2 pointer|23/10/2019
 
 
 
