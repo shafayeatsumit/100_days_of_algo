@@ -12,30 +12,34 @@
 
 function threeSum(nums) {
   nums.sort((a,b)=>a-b)
-  let triplet = [];
+  let triplets = [];
   for(let i=0;i<nums.length-2;i++){
-    if(nums[i]===nums[i-1]) continue
-    let restOfArray = nums.slice(i+1,nums.length)
+    if(nums[i-1]===nums[i]) continue
     let target = -nums[i]
-    twoSum(target,restOfArray,triplet)
-  } 
-  return triplet;
+    let restOfArray = nums.slice(i+1,nums.length)
+    debugger
+    twoSum(target,restOfArray,triplets)
+  }
+  return triplets;
 }
 
 
 function twoSum(target,arr, result) {
   let left = 0,
-  right = arr.length-1;  
+  right = arr.length-1;
+  debugger
   while(left<right){
     let sum = arr[left] + arr[right];
-    if(target === sum){
+    if(sum===target){
       result.push([-target,arr[left],arr[right]])
-      left +=1;
-      right -=1;
+      left++;
+      right--;
+      while(left<right && arr[left-1]===arr[left]) left++
+      while (left < right && arr[right]===arr[right+1]) right++
     }else if(target>sum){
-      left += 1;      
+      left++;
     }else{
-      right -= 1;
+      right--;
     }
   }
 }
@@ -45,6 +49,7 @@ function twoSum(target,arr, result) {
 // console.log(threeSum([-5, 2, -1, -2, 3]));
 
 // let result = threeSum([-1, 0, 1, 2, -1, -4])
-let result = threeSum([-2, 0, 0,1,1, 2, 2]) // this is the edge case
-// let result = twoSum([2, 7, 11, 15],9)
-console.log(result)
+// console.log(threeSum([-2, 0, 0,1,1, 2, 2])) // this is the edge case
+// console.log(threeSum([1, 2, -2, -1]))
+let result = twoSum([2, 7, 11, 15],9)
+//console.log(result)
