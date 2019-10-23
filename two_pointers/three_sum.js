@@ -45,6 +45,6 @@ function twoSum(target,arr, result) {
 // console.log(threeSum([-5, 2, -1, -2, 3]));
 
 // let result = threeSum([-1, 0, 1, 2, -1, -4])
-let result = threeSum([-2, 0, 0, 2, 2]) // this is the edge case
+let result = threeSum([-2, 0, 0,1,1, 2, 2]) // this is the edge case
 // let result = twoSum([2, 7, 11, 15],9)
 console.log(result)
