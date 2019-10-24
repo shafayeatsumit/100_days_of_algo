@@ -1,13 +1,13 @@
 function permute(nums) {    
   let subsets = [],
-  numsLength = nums.length,
-  permutations = [];  
+  numsLength = nums.length, // later we can compare it to the subset length
+  permutations = [];  // this is for result
   subsets.push([])
   // iterating the numbers
   for(let i=0;i<nums.length;i++){
     let currentNumber = nums[i];
-    let subsetsSize = subsets.length;
-    // iterating the subsets
+    let subsetsSize = subsets.length;    
+    // iterate over all the subset from SUBSETS and add the currentNumber
     for(let j=0;j<subsetsSize;j++){
       let set = subsets.shift() // last one from subset
       // adding the new number in every position k is index position
@@ -15,8 +15,11 @@ function permute(nums) {
       for(let k=0;k<set.length+1;k++){
         const setCopy = set.slice(0); // creating a copy of set
         setCopy.splice(k,0,currentNumber) // insert current number in the copy of that set
-        if(setCopy.length === numsLength){
-          permutations.push(setCopy)
+        // if the length is the same as number set length then no need to add it to the subset, 
+        // directly add to the permutations
+        // else add it to SUBSETS so later we can add number to the subset
+        if(setCopy.length === numsLength){          
+          permutations.push(setCopy) 
         }else{
           subsets.push(setCopy)
         }
