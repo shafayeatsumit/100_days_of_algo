@@ -9,7 +9,7 @@ function permute(nums) {
     let subsetsSize = subsets.length;    
     // iterate over all the subset from SUBSETS and add the currentNumber
     for(let j=0;j<subsetsSize;j++){
-      let set = subsets.shift() // last one from subset
+      let set = subsets.shift() // first one from subset
       // adding the new number in every position k is index position
       // length+1 because it works for empty set. eg: let a = [] , copyA = a.slice(0), copyA.splice(index,0,currentNumber) // [5] 
       for(let k=0;k<set.length+1;k++){
