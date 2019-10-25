@@ -63,6 +63,7 @@ LeetCode Marathon
 |51| Order Agnostic Binary Search| BS |22/10/2019
 |52| Find/Remove Duplicate|Cycle/2 pointer|23/10/2019
 |53| Review Subsets|Subsets|24/10/2019
+|54| top k elements|Heap|25/10/2019
 
 
 
