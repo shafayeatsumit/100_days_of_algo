@@ -64,6 +64,7 @@ LeetCode Marathon
 |52| Find/Remove Duplicate|Cycle/2 pointer|23/10/2019
 |53| Review Subsets|Subsets|24/10/2019
 |54| top k elements|Heap|25/10/2019
+|55| Insertion Sort|Sort|26/10/2019
 
 
 
