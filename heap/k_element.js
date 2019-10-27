@@ -1,35 +1,50 @@
-function maxHeapify(A, i) {
-  let left = (2 * i) + 1
-  let right = (2 * i) + 2
-  let largest = i
-  if (left < A.length && A[left] > A[largest]) largest = left
-  if (right < A.length && A[right] > A[largest]) largest = right
-  if (largest !== i) {
-    let temp = A[i]
-    A[i] = A[largest]
-    A[largest] = temp
-    maxHeapify(A, largest)
+function FindLargestKNumbers (nums, K){
+  this.kNumbers = [];    
+  for(let i=0; i<K;i++){    
+    this.kNumbers.push(nums[i])
+  } 
+  
+  // create a min heap  
+  this.minHeapify(this.kNumbers)
+
+  for(let i=K;i<nums.length;i++){
+    this.addNum(nums[i])
+  }
+  return this.kNumbers
+}
+
+function minHeapifyHelper(Heap, indx){
+  let leftIndx = (indx*2) + 1,
+  rightIndx = (indx * 2) + 2,
+  heapSize = Heap.length,
+  small = indx;
+  if(leftIndx<heapSize && Heap[leftIndx]<Heap[small]) small = leftIndx
+  if(rightIndx<heapSize && Heap[rightIndx]<Heap[small]) small = rightIndx
+  if(small !== indx){
+    [Heap[small], Heap[indx]] = [Heap[indx], Heap[small]]
+    minHeapifyHelper(Heap,small)
   }
 }
 
-function buildMaxHeap(heap) {
-  let parent = Math.floor(heap.length / 2) - 1
-  for (i = parent; i >= 0; i--) {
-    maxHeapify(heap, i)
-  }
-  return heap
+FindLargestKNumbers.prototype.minHeapify = function(nums){    
+  let lastParentIndex = Math.ceil(nums.length / 2) - 1;  
+  for (let i = lastParentIndex; i >= 0; i--) {
+    minHeapifyHelper(nums,i)
+  }  
+  this.kNumbers = nums;
 }
 
-function find_k(heap,k){
-  let result = [];
-  for(let i =0;i<k;i++){
-    let maxHeap = buildMaxHeap(heap);
-    result.push(maxHeap.shift());
-    maxHeap.splice(0, 0, maxHeap.pop())
+FindLargestKNumbers.prototype.addNum = function(number){
+  let firstElement = this.kNumbers[0];  
+  if(firstElement<number) {
+    this.kNumbers.shift()
+    this.kNumbers.push(number)
+    this.minHeapify(this.kNumbers)
   }
-  console.log(result)
+  
 }
+
 let sample = [5, 12, 11, -1, 12];
 
-
-find_k(sample,k=3)
+let Knumbers = new FindLargestKNumbers(sample, 3)
+console.log(Knumbers)
