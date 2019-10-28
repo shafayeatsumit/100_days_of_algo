@@ -1,50 +1,25 @@
-function FindLargestKNumbers (nums, K){
-  this.kNumbers = [];    
-  for(let i=0; i<K;i++){    
-    this.kNumbers.push(nums[i])
-  } 
-  
-  // create a min heap  
-  this.minHeapify(this.kNumbers)
+var Heap = require("collections/heap");
 
-  for(let i=K;i<nums.length;i++){
-    this.addNum(nums[i])
+function find_k_largest_numbers(nums, k) {
+  const minHeap = new Heap([], null, ((a, b) => b - a));
+  // put first 'K' numbers in the min heap
+  for (i = 0; i < k; i++) {
+    minHeap.push(nums[i]);
   }
-  return this.kNumbers
-}
 
-function minHeapifyHelper(Heap, indx){
-  let leftIndx = (indx*2) + 1,
-  rightIndx = (indx * 2) + 2,
-  heapSize = Heap.length,
-  small = indx;
-  if(leftIndx<heapSize && Heap[leftIndx]<Heap[small]) small = leftIndx
-  if(rightIndx<heapSize && Heap[rightIndx]<Heap[small]) small = rightIndx
-  if(small !== indx){
-    [Heap[small], Heap[indx]] = [Heap[indx], Heap[small]]
-    minHeapifyHelper(Heap,small)
+  // go through the remaining numbers of the array, if the number from the array is bigger than the
+  // top(i.e., smallest) number of the min-heap, remove the top number from heap and add the number from array
+  for (i = k; i < nums.length; i++) {
+    if (nums[i] > minHeap.peek()) {
+      minHeap.pop();
+      minHeap.push(nums[i]);
+    }
   }
+
+  // the heap has the top 'K' numbers, return them in a list
+  return minHeap.toArray();
 }
 
-FindLargestKNumbers.prototype.minHeapify = function(nums){    
-  let lastParentIndex = Math.ceil(nums.length / 2) - 1;  
-  for (let i = lastParentIndex; i >= 0; i--) {
-    minHeapifyHelper(nums,i)
-  }  
-  this.kNumbers = nums;
-}
 
-FindLargestKNumbers.prototype.addNum = function(number){
-  let firstElement = this.kNumbers[0];  
-  if(firstElement<number) {
-    this.kNumbers.shift()
-    this.kNumbers.push(number)
-    this.minHeapify(this.kNumbers)
-  }
-  
-}
-
-let sample = [5, 12, 11, -1, 12];
-
-let Knumbers = new FindLargestKNumbers(sample, 3)
-console.log(Knumbers)
+console.log(`Here are the top K numbers: ${find_k_largest_numbers([3, 1, 5, 12, 2, 11], 3)}`);
+console.log(`Here are the top K numbers: ${find_k_largest_numbers([5, 12, 11, -1, 12], 3)}`);
