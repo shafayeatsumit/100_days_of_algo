@@ -66,6 +66,7 @@ LeetCode Marathon
 |54| top k elements|Heap|25/10/2019
 |55| Insertion Sort|Sort|26/10/2019
 |56| top K elems|Heap|27/10/2019
+|57| Merge Two sorted List|Merge Sort|28/10/2019
 
 
 
