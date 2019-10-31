@@ -9,40 +9,27 @@ function TreeNode(val) {
 };
 
 function minDistance(root){
-  let Q = [root];
-  let min = null;
-  while(Q.length){    
-    let levelSize = Q.length;
-    for (let i = 0; i < levelSize; i++) {      
-      let node = Q.shift();
-      let nodeVal = node.val;
-      if (node.left){
-        let leftVal = node.left.val;
-        let d = Math.abs(nodeVal-leftVal)
-        if(min === null) {
-          min = d
-        }else{
-          min = Math.min(min, d);
-        }                
-        Q.push(node.left)
-      } 
-      if (node.right){
-        let rightVal = node.right.val;
-        let d = Math.abs(nodeVal-rightVal)
-        if(min===null){
-          min = d;
-        } else{
-          min = Math.min(min, d);
-        }       
-        
-        Q.push(node.right)
-      } 
+  let allNodes = []
+  function findNodes(node){
+    if(!node) return;     
+    allNodes.push(node.val)
+    findNodes(node.left)
+    findNodes(node.right)
+  }  
+  findNodes(root)
+  // finds the min distance among the elements of an integer array.
+  allNodes.sort((a,b)=>a-b)
+  let minVal = null;
+  for(let i=0; i< allNodes.length -1;i++){
+    let diff = Math.abs(allNodes[i+1] - allNodes[i])
+    if(minVal === null){
+      minVal = diff
+    }else{
+      minVal = Math.min(minVal, diff)
     }    
   }
-  if(min!==null) return min
-  return min;
+  return minVal;
 }
-
 
 var root = new TreeNode(4)
 root.left = new TreeNode(2)
