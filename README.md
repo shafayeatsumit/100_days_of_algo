@@ -70,6 +70,7 @@ LeetCode Marathon
 |58| Recursion Review|Recursion|29/10/2019
 |59| finding min distance|DFS|30/10/2019
 |60| merge sorted array|sort|31/10/2019
+|61| Review BS|Binary Search|01/11/2019
 
 
 
