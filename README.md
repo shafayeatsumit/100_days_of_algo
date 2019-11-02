@@ -1,5 +1,5 @@
-LeetCode Marathon
-================
+100 Days of Algo Challange
+===========================
 
 ### 100 days of algorithm/data structure learning challenge 
 
