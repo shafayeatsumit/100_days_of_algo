@@ -72,6 +72,9 @@
 |60| merge sorted array|sort|31/10/2019
 |61| Review BS|Binary Search|01/11/2019
 |62| [3sum closest](https://github.com/shafayeatsumit/leet_code_marathon/blob/master/two_pointers/three_sum_closest.js) |Two Pointers|02/11/2019
+|63| [find all the duplicates](https://github.com/shafayeatsumit/leet_code_marathon/blob/master/cyclic_sort/find_all_duplicates.js)|cycle sort|03/11/2019
+
+
 
 
 
