@@ -1,33 +1,32 @@
-function TreeNode(value){
-  this.value = value;
+/**
+ * Given a binary tree and a number sequence, 
+ * find if the sequence is present as a root-to-leaf path in the given tree.
+ * Check if there is a root to leaf path with given sequence.
+ */
+
+function TreeNode(val){
+  this.val = val;
   this.left = null;
   this.right = null;  
 }
 
-function find_paths_recursive(root, currentPath, sequence){
-  if(!root) return false
-  currentPath = [...currentPath, root.value]
-  if(!root.left && !root.right){
-    if(JSON.stringify(sequence) === JSON.stringify(currentPath)){
-      return true
-    }else{
-      return false
-    } 
+const find_path = function (root, sequence) {  
+  function findPathRecursive(node,count){        
+    if(!node) return false;
+    let isSequence = node.val === sequence[count];
+    if(!isSequence) return false 
+    if(!node.left && !node.right) return true
+    return findPathRecursive(node.left, count + 1) || findPathRecursive(node.right, count + 1)
   }
-  
-  return find_paths_recursive(root.left, currentPath, sequence) ||  find_paths_recursive(root.right, currentPath, sequence)  
-}
-
-const find_path = function (root, sequence) {
-  let currentPath = []
-  let result = find_paths_recursive(root, currentPath, sequence)
-  return result;
+  return findPathRecursive(root,count=0)  
 };
 
-let root = new TreeNode(1);
-root.left = new TreeNode(7)
-root.right = new TreeNode(9)
-root.right.left = new TreeNode(2)
-root.right.right = new TreeNode(9)
-let result = find_path(root, [1, 9, 9])
-console.log(result)
+var root = new TreeNode(1)
+root.left = new TreeNode(0)
+root.right = new TreeNode(1)
+root.left.left = new TreeNode(1)
+root.right.left = new TreeNode(6)
+root.right.right = new TreeNode(5)
+
+console.log(`Tree has path sequence: ${find_path(root, [1, 0, 7])}`)
+console.log(`Tree has path sequence: ${find_path(root, [1, 1, 6])}`)
