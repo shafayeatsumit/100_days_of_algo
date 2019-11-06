@@ -1,27 +1,22 @@
+/**
+ * 
+ * Leetcode problem: 26
+ */
+
 const removeDuplicates = function (nums) {
-  let p = 0; // next to non duplicates
-  for (i = 0; i < nums.length;i++){
-    if (nums[i]!==arr[p]){
-      p++
-      [nums[p], nums[i]] = [nums[i], nums[p]]
+  if(nums.length === 0) return 0;
+  let p = 0 ; // last non duplicates
+  for(let i =0 ; i<nums.length; i++){
+    if(nums[i]!==nums[p]){
+      p++;
+      nums[p] = nums[i]
     }
   }
-  console.log(nums)  
   return p+1;
 };
 
-// var removeDuplicates = function (nums) {
-//   let p = 0;
-//   for (let i = 0; i < nums.length; i++) {    
-//     if (nums[p] !== nums[i]) {
-//       nums[p] = nums[i]
-//     }
-//     if (nums[p] !== nums[p - 1]) p++    
-    
-//   }
-//   return p
-// };
 
-let arr = [2, 3, 3, 3, 6, 9, 9];
+
+let arr = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
 let r = removeDuplicates(arr)
 console.log(r)

@@ -75,6 +75,7 @@
 |63| [find all the duplicates](https://github.com/shafayeatsumit/leet_code_marathon/blob/master/cyclic_sort/find_all_duplicates.js)|cycle sort|03/11/2019
 |64| [Reviewed Merge Sort](https://github.com/shafayeatsumit/leet_code_marathon/blob/master/sort/merge_sort.js)|Merge Sort|04/11/2019
 |65| [Remove Element 4m array](https://github.com/shafayeatsumit/leet_code_marathon/blob/master/two_pointers/remove_x_from_array.js)|Two Pointers|05/11/2019
+|66| [Remove duplicates from array](https://github.com/shafayeatsumit/leet_code_marathon/blob/master/two_pointers/remove_duplicate.js)|Two Pointers|06/11/2019
 
 
 
