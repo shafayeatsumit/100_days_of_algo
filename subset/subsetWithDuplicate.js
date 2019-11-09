@@ -3,10 +3,10 @@ const find_subsets = function (nums) {
   let subsets = [[]];    
   let startIndex = 0
   for (let i=0; i < nums.length; i++){
-    let end = subsets.length                 
+    let end = subsets.length;                 
     for(let j=startIndex;j<end;j++){          
       let elem = subsets[j];      
-      let newElem = [...elem, nums[i]]
+      let newElem = [...elem, nums[i]];
       subsets.push(newElem)      
     }            
     if (nums[i] === nums[i+1]){
