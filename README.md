@@ -80,7 +80,7 @@
 |68| Review BS|Binary Search|08/11/2019
 |69| Review subset|subset|09/11/2019
 |70| [Finding the next letter](https://github.com/shafayeatsumit/leet_code_marathon/blob/master/binary_search/next_letter.js)|Binary Search|10/11/2019
-
+|71| [Letter Case Permutation](https://github.com/shafayeatsumit/leet_code_marathon/blob/master/subset/case_permutation.js)|Binary Search|11/11/2019
 
 
 
