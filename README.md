@@ -77,6 +77,12 @@
 |65| [Remove Element 4m array](https://github.com/shafayeatsumit/leet_code_marathon/blob/master/two_pointers/remove_x_from_array.js)|Two Pointers|05/11/2019
 |66| [Remove duplicates from array](https://github.com/shafayeatsumit/leet_code_marathon/blob/master/two_pointers/remove_duplicate.js)|Two Pointers|06/11/2019
 |67| [Find floor ceiling number](https://github.com/shafayeatsumit/leet_code_marathon/blob/master/binary_search/ceiling_of_a_number.js)|Binary Search|07/11/2019
+|68| Review BS|Binary Search|08/11/2019
+|69| Review subset|subset|09/11/2019
+|70| [Finding the next letter](https://github.com/shafayeatsumit/leet_code_marathon/blob/master/binary_search/next_letter.js)|subset|10/11/2019
+
+
+
 
 
 
