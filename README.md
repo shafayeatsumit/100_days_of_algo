@@ -79,7 +79,7 @@
 |67| [Find floor ceiling number](https://github.com/shafayeatsumit/leet_code_marathon/blob/master/binary_search/ceiling_of_a_number.js)|Binary Search|07/11/2019
 |68| Review BS|Binary Search|08/11/2019
 |69| Review subset|subset|09/11/2019
-|70| [Finding the next letter](https://github.com/shafayeatsumit/leet_code_marathon/blob/master/binary_search/next_letter.js)|subset|10/11/2019
+|70| [Finding the next letter](https://github.com/shafayeatsumit/leet_code_marathon/blob/master/binary_search/next_letter.js)|Binary Search|10/11/2019
 
 
 
