@@ -1,3 +1,9 @@
+/**
+ * leet code problem 116
+ * You are given a perfect binary tree where all leaves are on the same level, 
+ * and every parent has two children.
+ */
+
 class TreeNode {
   constructor(val) {
     this.val = val;
@@ -30,20 +36,22 @@ class TreeNode {
 };
 
 const connect_level_order_siblings = function (root) {
-  let Q = [root]
-  while(Q.length>0){
-    let levelLength = Q.length;
-    let previousNode = null    
-    for(let i =0; i<levelLength; i++){
-      let node = Q.shift()
-      if(previousNode) {
-        previousNode.next = node
-      }
-      previousNode = node
-      if(node.left) Q.push(node.left)
-      if(node.right) Q.push(node.right)
+  if (root === null) {
+    return root;
+  }
+  let Q = [root];
+  while (Q.length) {
+    let levelSize = Q.length,
+      prev = null;
+    for (let i = 0; i < levelSize; i++) {
+      let node = Q.shift();
+      if (prev) prev.next = node
+      prev = node;
+      if (node.left) Q.push(node.left)
+      if (node.right) Q.push(node.right)
     }
   }
+  return root;
 };
 
 
