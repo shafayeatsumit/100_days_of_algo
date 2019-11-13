@@ -82,7 +82,6 @@
 |70| [Finding the next letter](https://github.com/shafayeatsumit/leet_code_marathon/blob/master/binary_search/next_letter.js)|Binary Search|10/11/2019
 |71| [Letter Case Permutation](https://github.com/shafayeatsumit/leet_code_marathon/blob/master/subset/case_permutation.js)|Binary Search|11/11/2019
 |72| [Connect siblings](https://github.com/shafayeatsumit/leet_code_marathon/blob/master/bfs/connect_level_order_siblings.js) |BFS|12/11/2019
-
 |73| [Tree Boundry](https://github.com/shafayeatsumit/leet_code_marathon/blob/master/bfs/tree_boundry.js) |BFS|13/11/2019
 
 
