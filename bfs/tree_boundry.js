@@ -13,23 +13,31 @@ class TreeNode {
 const find_tree_boundary = function (root) {
   var result = [],
   Q = [root];
+  let level = 0;
   while(Q.length){
-    var levelSize = Q.length;
-    var levelChild = [];    
-    for(let i=0; i < levelSize; i++){
+    var levelSize = Q.length;    
+    
+    for(let i=0, n =level ; i < levelSize; i++){
       let node = Q.shift();
+      debugger
       if (!node.left && !node.right){
-        result.push(node.value)
+        result.splice(n,0, node.value)
+        n++
+        //result.push(node.value)
         continue
       }
-      levelChild.push(node.value)      
+      if(i===0){
+        result.splice(n, 0, node.value)
+        n++
+
+      }else if(i+1 === levelSize){
+        result.splice(n, 0, node.value)
+        n++
+      }        
       if(node.left) Q.push(node.left)
       if(node.right) Q.push(node.right)
-    }        
-    let head = levelChild.shift(),
-    tail = levelChild.pop();
-    if(head) result.push(head)
-    if(tail) result.push(tail)
+    }    
+    level += 1;    
   }    
   return result;
 };

@@ -83,6 +83,7 @@
 |71| [Letter Case Permutation](https://github.com/shafayeatsumit/leet_code_marathon/blob/master/subset/case_permutation.js)|Binary Search|11/11/2019
 |72| [Connect siblings](https://github.com/shafayeatsumit/leet_code_marathon/blob/master/bfs/connect_level_order_siblings.js) |BFS|12/11/2019
 |73| [Tree Boundry](https://github.com/shafayeatsumit/leet_code_marathon/blob/master/bfs/tree_boundry.js) |BFS|13/11/2019
+|74| [Path sum 2](https://github.com/shafayeatsumit/leet_code_marathon/blob/master/dfs/path_sum_2.js) |BFS|14/11/2019
 
 
 
