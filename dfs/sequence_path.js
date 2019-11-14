@@ -11,12 +11,11 @@ function TreeNode(val){
 }
 
 const find_path = function (root, sequence) {  
-  function findPathRecursive(node,count){        
-    if(!node) return false;
-    let isSequence = node.val === sequence[count];
-    if(!isSequence) return false 
-    if(!node.left && !node.right) return true
-    return findPathRecursive(node.left, count + 1) || findPathRecursive(node.right, count + 1)
+  function findPathRecursive(node,count){
+    if(!node) return false
+    if(node.val !== sequence[count])return false;        
+    if (!node.left && !node.right && sequence.length === count+1) return true;
+    return findPathRecursive(node.left, count+1) || findPathRecursive(node.right, count+1)
   }
   return findPathRecursive(root,count=0)  
 };
