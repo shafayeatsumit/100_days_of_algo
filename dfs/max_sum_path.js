@@ -14,6 +14,15 @@
  * [9,6,-3,null,null,-6,2,null,null,2,null,-6,-6,-6] // 16
  */
 
+ /**
+  * explain: This problem maximum has 4 situation: 
+  * 1)pick root 
+  * 2)pick left branch 
+  * 3) pick right branch 
+  * 4) pick branch go through root with positive left branch and right branch.
+  * 
+  */
+
 function TreeNode(val) {
   this.val = val;
   this.left = null;
@@ -23,20 +32,22 @@ function TreeNode(val) {
 function maxSumPath(root){
   let maxSum = -Infinity;
   const maxPath = (node) => {
-    if (!node) return 0;    
+    if (!node) return 0;
     let left = maxPath(node.left);
     let right = maxPath(node.right);
-    let maxLeftRight = Math.max(left,right)
-    maxSum = Math.max(maxLeftRight, maxSum)
-    return node.val + maxLeftRight;
+    let maxLeftRight = Math.max(left, right); 
+    maxSum = Math.max(node.val, maxSum) // pick root
+    maxSum = Math.max(maxSum, node.val + maxLeftRight) // pick left or right
+    maxSum = Math.max(maxSum, node.val + left + right) // pick root + left + right
+    return node.val + Math.max(maxLeftRight, 0); // return max left or right
   }
   maxPath(root);
   return maxSum;
 }
 
 var root = new TreeNode(-2)
-// root.left = new TreeNode(3)
-// root.right = new TreeNode(2)
+root.left = new TreeNode(3)
+root.right = new TreeNode(2)
 //root.right = new TreeNode(3)
 // root.right = new TreeNode(3)
 // root.right = new TreeNode(20)
