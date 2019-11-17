@@ -20,20 +20,16 @@ function TreeNode(val) {
 
 function diameterOfBinaryTree(root) { 
   let diameter = 0;
-  function maxDepth(root) {
-    if (!root) return 0
-    let leftHeight = maxDepth(root.left)
-    let rightHeight = maxDepth(root.right)
-    let newDiameter = leftHeight + rightHeight
-    diameter = Math.max(diameter, newDiameter)
-    if (leftHeight > rightHeight) {
-      return leftHeight + 1;
-    } else {
-      return rightHeight + 1;
-    }
+  function maxDepth(node){
+    if(!node) return 0;
+    let left = maxDepth(node.left)
+    let right = maxDepth(node.right)
+    let d = 1+left+right
+    diameter = Math.max(d,diameter)  
+    return 1+Math.max(left,right)
   }
   maxDepth(root)
-  return diameter
+  return diameter;
 }
 
 
@@ -41,7 +37,8 @@ function diameterOfBinaryTree(root) {
 var root = new TreeNode(1)
 root.left = new TreeNode(2)
 root.right = new TreeNode(3)
-root.right.left = new TreeNode(5)
-root.right.right = new TreeNode(6)
-diameterOfBinaryTree(root)
+root.left.left = new TreeNode(4)
+root.left.right = new TreeNode(5)
+let r = diameterOfBinaryTree(root)
+console.log(r)
 // console.log(`Tree Diameter: ${treeDiameter.find_diameter(root)}`)
