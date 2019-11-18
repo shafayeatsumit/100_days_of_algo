@@ -7,8 +7,7 @@ const length_of_longest_substring = function (s, k) {
     let char = s[windowEnd];    
     if(!charFreq[char]) charFreq[char] = 0;
     charFreq[char] += 1;
-    numberOfChars += 1;        
-    debugger
+    numberOfChars += 1;            
     while(Object.keys(charFreq).length>k+1){
       let firstChar = s[windowStart]
       charFreq[firstChar] -=1;

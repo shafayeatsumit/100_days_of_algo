@@ -85,8 +85,9 @@
 |73| [Tree Boundry](https://github.com/shafayeatsumit/leet_code_marathon/blob/master/bfs/tree_boundry.js) |BFS|13/11/2019
 |74| [Path sum 2](https://github.com/shafayeatsumit/leet_code_marathon/blob/master/dfs/path_sum_2.js) |DFS|14/11/2019
 |75| Review DFS|DFS|15/11/2019
-|76| [BT max path sum](https://github.com/shafayeatsumit/leet_code_marathon/blob/master/dfs/max_sum_path.js)|DFS|15/11/2019
-
+|76| [BT max path sum](https://github.com/shafayeatsumit/leet_code_marathon/blob/master/dfs/max_sum_path.js)|DFS|16/11/2019
+|77| [No repeat substr](https://github.com/shafayeatsumit/100_days_of_algo/blob/master/sliding_window/no_repeat_substring.js)|sliding window|17/11/2019
+|78| [Quick sort](https://github.com/shafayeatsumit/100_days_of_algo/tree/master/sort/quick_sort.js)|sort|18/11/2019
 
 
 
