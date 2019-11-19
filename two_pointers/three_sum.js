@@ -35,7 +35,7 @@ function twoSum(target,arr, result) {
       left++;
       right--;
       while(left<right && arr[left-1]===arr[left]) left++
-      while (left < right && arr[right]===arr[right+1]) right++
+      while (left < right && arr[right]===arr[right+1]) right--
     }else if(target>sum){
       left++;
     }else{
