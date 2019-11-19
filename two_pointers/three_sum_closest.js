@@ -15,34 +15,34 @@
  * Explanation: The triplet [-3, 1, 2] has the closest sum to the target.
  */
 
-
-
-
-
 var threeSumClosest = function (nums, target) {
+  if(nums.length<0) return 0;  
   nums.sort((a,b)=>a-b)
-  let result = nums[0] + nums[1] + nums[nums.length -1]; //default left :nums[1] , default right: nums[nums.lenght -1]
-  for(let i=0; i<nums.length-2; i++){
+  let sum = nums[0] + nums[1] + nums[nums.length-1]  
+  let closestSum = sum;
+  for(let i=0 ; i< nums.length-2; i++){
+    let number = nums[i];
     let left = i+1,
-    right = nums.length-1;    
+    right = nums.length-1
     while(left<right){
-      let tripletSum = nums[i]+nums[left]+nums[right];
-      let resultMinDiff = Math.abs(target - result); // minimum difference between result and target
-      let currentMinDiff = Math.abs(target - tripletSum); // minimum difference between current triplet sum and target
-      if(currentMinDiff === 0) return tripletSum;
-      if (currentMinDiff < resultMinDiff){
-        result = tripletSum;
+      let tripletSum = number + nums[left] + nums[right];
+      // difference between target - currentsum and target - closestSum
+      // triplet can be bigger than target and still it can be a closestSum
+      if (Math.abs(target - tripletSum) < Math.abs(target - closestSum)) {
+        closestSum = tripletSum
       }
-      if(target>tripletSum){
-        left +=1;
+      if(tripletSum<=target){
+        left++;
       }else{
-        right -=1;
+        right--;
       }
     }
   }
-  return result;
+  return closestSum;
 };
 
-let nums = [0, 2, 1, -3],
+
+
+let nums = [-1, 2, 1, -4],
 target = 1;
 threeSumClosest(nums,target)
