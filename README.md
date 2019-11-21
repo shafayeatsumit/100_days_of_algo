@@ -90,6 +90,7 @@
 |78| [Quick sort](https://github.com/shafayeatsumit/100_days_of_algo/tree/master/sort/quick_sort.js)|sort|18/11/2019
 |79| [Triplet Sum](https://github.com/shafayeatsumit/100_days_of_algo/tree/master/two_pointers/three_sum_closest.js)|two pointers|19/11/2019
 |80| [Subarrays with Product](https://github.com/shafayeatsumit/100_days_of_algo/tree/master/two_pointers/subarray_product.js)|two pointers|20/11/2019
+|81| Review Sorting |Sort|21/11/2019
 
 
 
