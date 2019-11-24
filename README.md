@@ -93,7 +93,7 @@
 |81| Review Sorting |Sort|21/11/2019
 |82| Back Space Problem |N/A|22/11/2019
 |83| [Back Space string compare](https://github.com/shafayeatsumit/100_days_of_algo/tree/master/two_pointers/backspace_str_compare.js) |N/A|23/11/2019
-|84| [Tree Boundry](https://github.com/shafayeatsumit/100_days_of_algo/tree/master/bfs/tree) |BFS|24/11/2019
+|84| [Tree Boundry](https://github.com/shafayeatsumit/100_days_of_algo/tree/master/bfs/tree_boundry.js) |BFS|24/11/2019
 
 
 
