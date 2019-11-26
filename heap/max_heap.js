@@ -6,7 +6,8 @@
 
  // reviewed: 1,
 
-const sample = [1, 3, 5, 4, 6, 13, 10, 9, 8, 15, 17]
+// const sample = [1, 3, 5, 4, 6, 13, 10, 9, 8, 15, 17]
+const sample = [5, 12, 64, 1, 37, 90, 91, 97]
 
 
 function maxHeapify(A,i){    
@@ -31,3 +32,4 @@ function buildMaxHeap(heap) {
 }
 
 buildMaxHeap(sample)
+console.log(sample)
